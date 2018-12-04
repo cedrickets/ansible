@@ -1,0 +1,26 @@
+---
+- name: Creation d'une VM Onion pour CyberOps
+  hosts: localhost
+  gather_facts: no
+  vars_prompt:
+  - name: rootpassword
+    prompt: "Enter your password to esxi"
+    private: yes
+  - name: namevm
+    prompt: "Entrer le nom de votre VM"
+    private: yes
+  tasks:
+  - name: Creation de la vm a partir du template
+    vmware_guest:
+        hostname: 192.168.0.120
+        username: administrator@vsphere.local
+        password: "{{ rootpassword }}"
+        validate_certs: False
+        name: "{{ namevm }}"
+        template: templateOnion
+        datacenter: test
+        folder: /templates
+
+...
+
+
