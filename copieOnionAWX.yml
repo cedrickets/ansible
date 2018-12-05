@@ -1,0 +1,19 @@
+---
+- name: Creation d'une VM Onion pour CyberOps
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Creation de la vm a partir du template
+    vmware_guest:
+        hostname: 192.168.0.120
+        username: administrator@vsphere.local
+        password: Ff.151515
+        validate_certs: False
+        name: testAWX
+        template: templateOnion
+        datacenter: test
+        folder: /templates
+
+...
+
+
