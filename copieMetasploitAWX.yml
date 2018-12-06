@@ -1,0 +1,14 @@
+---
+- name: Creation d'une VM metasploit pour CyberOps
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Creation de la vm a partir du template
+    vmware_guest:
+        hostname: 192.168.0.120
+        validate_certs: False
+        name: "{{ namevm }}"
+        template: templateMetasploit
+        datacenter: test
+        folder: /templates
+...
