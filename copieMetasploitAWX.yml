@@ -11,4 +11,6 @@
         template: templateMetasploit
         datacenter: test
         folder: /templates
+        networks:
+           - name: VM Network 2
 ...
