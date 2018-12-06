@@ -1,0 +1,13 @@
+---
+- name: Creation d'une VM CyberOps
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Creation de la vm a partir du template
+    vmware_guest:
+        validate_certs: False
+        name: "{{ namevm }}"
+        template: templateCyberOps
+        datacenter: test
+        folder: /templates
+...
