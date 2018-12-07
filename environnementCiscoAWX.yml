@@ -1,0 +1,27 @@
+---
+- name: Creation de l'environnement CyberOps
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Creation de la vm CyberOps a partir du template
+    vmware_guest:
+        validate_certs: False
+        name: CyberOpsEtudiant1
+        template: templateCyberOps
+        datacenter: test
+        folder: /templates	
+  - name: Creation de la vm Onion partir du template
+    vmware_guest:
+        validate_certs: False
+        name: testAWX
+        template: OnionEtudiant1
+        datacenter: test
+        folder: /templates
+  - name: Creation de la vm Metasploit partir du template
+    vmware_guest:
+        validate_certs: False
+        name: MetasploitEtudiant1
+        template: templateMetasploit
+        datacenter: test
+        folder: /templates
+...
