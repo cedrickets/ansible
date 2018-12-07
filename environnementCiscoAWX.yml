@@ -13,8 +13,8 @@
   - name: Creation de la vm Onion partir du template
     vmware_guest:
         validate_certs: False
-        name: testAWX
-        template: OnionEtudiant1
+        name: OnionEtudiant1
+        template: templateOnion
         datacenter: test
         folder: /templates
   - name: Creation de la vm Metasploit partir du template
